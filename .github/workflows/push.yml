@@ -31,8 +31,8 @@ jobs:
       - name: ssh to server
         uses: appleboy/ssh-action@v0.1.10
         with:
-          host: ${{ secret.HOST }}
-          username: ${{ secret.HOST_USERNAME }}
-          password: ${{ secret.HOST_PASSWORD }}
-          port: ${{ secret.HOST_PORT }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_USERNAME }}
+          password: ${{ secrets.HOST_PASSWORD }}
+          port: ${{ secrets.HOST_PORT }}
           script: whoami
