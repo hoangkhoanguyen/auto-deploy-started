@@ -14,7 +14,7 @@ router.use(function (req, res, next) {
 
 router.get('/', function (req, res) {
   // res.sendFile(path + 'index.html');
-  res.send('hello');
+  res.send('helloo');
 });
 
 router.get('/sharks', function (req, res) {
