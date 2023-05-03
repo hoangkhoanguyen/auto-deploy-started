@@ -8,11 +8,6 @@ jobs:
     name: build and publish images
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@main
-      # - name: npm install
-      #   uses: actions/npm@main
-      #   with:
-      #     args: install
       - name: Checkout
         uses: actions/checkout@v3
 
@@ -32,16 +27,12 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/nodejstest:latest
           file: ./Dockerfile
-      # - name: docker build
-      #   uses: actions/docker/cli@main
-      #   with:
-      #     args: build -t ${{ secrets.DOCKER_USERNAME }}/nodejstest:latest .
-      # - name: docker login
-      #   uses: actions/docker/login@main
-      #   env:
-      #     DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      #     DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      # - name: docker push
-      #   uses: actions/docker/cli@main
-      #   with:
-      #     args: push ${{ secrets.DOCKER_USERNAME }}/nodejstest:latest
+
+      - name: ssh to server
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secret.HOST }}
+          username: ${{ secret.HOST_USERNAME }}
+          password: ${{ secret.HOST_PASSWORD }}
+          port: ${{ secret.HOST_PORT }}
+          script: whoami
