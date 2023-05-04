@@ -35,10 +35,12 @@ jobs:
           username: ${{ secrets.HOST_USERNAME }}
           password: ${{ secrets.HOST_PASSWORD }}
           port: ${{ secrets.HOST_PORT }}
+          script: |
+            - whoami
+            - whoami
 
-      - uses: actions/checkout@v3
-      - name: run docker-compose
-        uses: sudo-bot/action-docker-compose@latest
-        with:
-          # https://docs.docker.com/compose/reference/overview/
-          cli-args: 'up'
+      # - uses: actions/checkout@v3
+      # - name: run docker-compose
+      #   uses: sudo-bot/action-docker-compose@latest
+      #   with:
+      #     cli-args: 'up'
