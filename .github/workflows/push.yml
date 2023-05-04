@@ -36,8 +36,8 @@ jobs:
           password: ${{ secrets.HOST_PASSWORD }}
           port: ${{ secrets.HOST_PORT }}
           script: |
-            - whoami
-            - whoami
+            whoami
+            whoami
 
       # - uses: actions/checkout@v3
       # - name: run docker-compose
