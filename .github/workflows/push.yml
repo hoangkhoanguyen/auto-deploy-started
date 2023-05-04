@@ -41,4 +41,4 @@ jobs:
           port: ${{ secrets.HOST_PORT }}
           script: |
             whoami
-            whoami
+            docker ps -a
