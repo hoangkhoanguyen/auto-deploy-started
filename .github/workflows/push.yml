@@ -28,10 +28,6 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/nodejstest:latest
           file: ./Dockerfile
 
-  ssh:
-    name: execute on server
-    runs-on: ubuntu-latest
-    steps:
       - name: ssh to server
         uses: appleboy/ssh-action@v0.1.10
         with:
@@ -40,5 +36,11 @@ jobs:
           password: ${{ secrets.HOST_PASSWORD }}
           port: ${{ secrets.HOST_PORT }}
           script: |
-            whoami
-            docker ps -a
+            cd nodejs-test
+            docker-compose pull
+            docker-compose up -d
+
+  # ssh:
+  #   name: execute on server
+  #   runs-on: ubuntu-latest
+  #   steps:
