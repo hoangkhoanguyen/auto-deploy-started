@@ -5,7 +5,7 @@ on:
 name: build, publish images
 jobs:
   build:
-    name: build and publish images
+    name: build, publish, run images
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,8 +39,3 @@ jobs:
             cd nodejs-test
             docker-compose pull
             docker-compose up -d
-
-  # ssh:
-  #   name: execute on server
-  #   runs-on: ubuntu-latest
-  #   steps:
