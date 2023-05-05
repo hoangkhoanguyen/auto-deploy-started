@@ -34,5 +34,5 @@ jobs:
           host: ${{ secrets.HOST_AQ }}
           username: ${{ secrets.HOST_USERNAME_AQ }}
           password: ${{ secrets.HOST_PASSWORD_AQ }}
-          port: ${{ secrets.HOST_PORT_AQ }}
+          port: 20202
           script: whoami
