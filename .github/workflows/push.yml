@@ -31,11 +31,8 @@ jobs:
       - name: ssh to server
         uses: appleboy/ssh-action@v0.1.10
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.HOST_USERNAME }}
-          password: ${{ secrets.HOST_PASSWORD }}
-          port: ${{ secrets.HOST_PORT }}
-          script: |
-            cd nodejs-test
-            docker-compose pull
-            docker-compose up -d
+          host: ${{ secrets.HOST_AQ }}
+          username: ${{ secrets.HOST_USERNAME_AQ }}
+          password: ${{ secrets.HOST_PASSWORD_AQ }}
+          port: ${{ secrets.HOST_PORT_AQ }}
+          script: whoami
