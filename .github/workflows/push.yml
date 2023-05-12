@@ -27,12 +27,3 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/nodejstest:latest
           file: ./Dockerfile
-
-      # - name: ssh to server
-      #   uses: appleboy/ssh-action@v0.1.10
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.HOST_USERNAME }}
-      #     password: ${{ secrets.HOST_PASSWORD }}
-      #     port: 22
-      #     script: whoami
