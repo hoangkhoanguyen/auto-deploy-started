@@ -14,7 +14,7 @@ router.use(function (req, res, next) {
 
 router.get('/', function (req, res) {
   // res.sendFile(path + 'index.html');
-  res.send('helloo baby milo hihi haha test server watcher v1');
+  res.send('helloo baby milo hihi haha test server watcher v1.2');
 });
 
 router.get('/sharks', function (req, res) {
